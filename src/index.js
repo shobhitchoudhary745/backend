@@ -1,9 +1,10 @@
+const cors=require('cors')
 require('dotenv').config()
 const express = require("express");   
-require("./db/mongoose");
+
 const app = express();
-const cors=require('cors')
 app.use(cors())
+require("./db/mongoose");
 const port = process.env.PORT;
 
 const userRouter=require('./routers/user')

@@ -7,14 +7,11 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     trim: true,
+    lowercase:true
   },
   phoneNumber:{
     type:Number,
     required:true
-  },
-  adress: {
-    type: String,
-    required:true,
   },
   password: {
     type: String,
@@ -32,6 +29,9 @@ const userSchema = new mongoose.Schema({
         throw new Error("Email is invalid");
       }
     },
+  },
+  adress:{
+      type:String,
   },
   tokens:[{
     token:{
